@@ -17,17 +17,6 @@ public class Contacts {
 
     private String firstName;
 
-    public Contacts(String firstName, String lastName, String address, String city, String state, String emailId, int zipCode, long phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.emailId = emailId;
-        this.zipCode = zipCode;
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -92,11 +81,11 @@ public class Contacts {
         this.phoneNumber = phoneNumber;
     }
 
-    private String lastName;
-    private String address;
-    private String city;
-    private String state;
-    private String emailId;
-    private int zipCode;
-    private long phoneNumber;
+    public String lastName;
+    public String address;
+    public String city;
+    public String state;
+    public String emailId;
+    public int zipCode;
+    public long phoneNumber;
 }
