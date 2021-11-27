@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class AddressBook {
     static ArrayList<Contacts> contact_Details = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
+
     /**
      * used to add contacts to addressbook
      */
@@ -98,6 +99,7 @@ public class AddressBook {
                 System.out.println("Entered name not found in the AddressBook");
         }
     }
+
     /**
      * showContacts is used to display contacts
      */

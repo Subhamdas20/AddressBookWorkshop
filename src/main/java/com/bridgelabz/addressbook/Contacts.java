@@ -81,11 +81,11 @@ public class Contacts {
         this.phoneNumber = phoneNumber;
     }
 
-    public String lastName;
-    public String address;
-    public String city;
-    public String state;
-    public String emailId;
-    public int zipCode;
-    public long phoneNumber;
+    private String lastName;
+    private String address;
+    private String city;
+    private String state;
+    private String emailId;
+    private int zipCode;
+    private long phoneNumber;
 }
