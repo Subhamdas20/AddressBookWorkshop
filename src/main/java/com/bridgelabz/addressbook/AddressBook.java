@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class AddressBook {
     static ArrayList<Contacts> contact_Details = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
-
-
     /**
      * used to add contacts to addressbook
      */
@@ -49,6 +47,11 @@ public class AddressBook {
         }
     }
 
+    /**
+     * used to edit contacts
+     *
+     * @param name is used to edit contacts
+     */
     public void editContacts(String name) {
         for (Contacts contact : contact_Details) {
             if (name.equalsIgnoreCase(contact.getFirstName())) {
@@ -78,6 +81,32 @@ public class AddressBook {
                 long phoneNumber = sc.nextInt();
                 contact.setPhoneNumber(phoneNumber);
             }
+        }
+    }
+
+    /**
+     * deleteContact is used to delete
+     *
+     * @param name is used to delete the contact based upon names
+     */
+    public void deleteContact(String name) {
+        for (Contacts contact : contact_Details) {
+            if (name.equalsIgnoreCase(contact.getFirstName())) {
+                System.out.println("Entered Name found in the contacts, deleting contact");
+                contact_Details.remove(contact);
+            } else
+                System.out.println("Entered name not found in the AddressBook");
+        }
+    }
+    /**
+     * showContacts is used to display contacts
+     */
+    public void showContacts() {
+        int i = 1;
+        for (Contacts contact : contact_Details) {
+            System.out.println("Details  of contact number " + i + " is");
+            System.out.println(contact.toString());
+            i++;
         }
     }
 }
