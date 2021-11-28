@@ -11,11 +11,11 @@ public class AddressBookMain {
             System.out.println("Enter 1 to add \nEnter 2 to edit \nEnter3 to delete");
             switch (sc.nextInt()) {
                 case 1:
-                    addressBook.addContacts();
+                    addressBook.setAddContacts();
                     break;
                 case 2:
                     System.out.println("Enter the contact name to edit");
-                    addressBook.editContacts(sc.next());
+                    addressBook.edit(sc.next());
                     break;
                 case 3:
                     System.out.println("Enter the contact name to delete");
