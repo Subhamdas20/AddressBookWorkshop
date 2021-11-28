@@ -1,9 +1,18 @@
 package com.bridgelabz.addressbook;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
+
 public class AddressBookMain {
+    static HashMap<String, AddressBook> addressBooks = new HashMap<>();
     public static void main(String[] args) {
+        AddressBook book1 = new AddressBook();
+        AddressBook book2 = new AddressBook();
+        AddressBook book3 = new AddressBook();
+        addressBooks.put("AddressBook1", book1);
+        addressBooks.put("AddressBook2", book2);
+        addressBooks.put("AddressBook3", book3);
         AddressBook addressBook = new AddressBook();
         Scanner sc = new Scanner(System.in);
         int i = 1;
