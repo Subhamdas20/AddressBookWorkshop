@@ -1,6 +1,8 @@
 package com.bridgelabz.addressbook;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class AddressBook {
     static ArrayList<Contacts> contact_Details = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
@@ -37,16 +39,40 @@ public class AddressBook {
      * used to add contacts to addressbook
      */
     public ArrayList<Contacts> addContacts(String firstName, String lastName, String address, String city, String state, String emailId, int zipCode, long phoneNumber) {
-        Contacts details = new Contacts();
-        details.setFirstName(firstName);
-        details.setLastName(lastName);
-        details.setAddress(address);
-        details.setCity(city);
-        details.setState(state);
-        details.setEmailId(emailId);
-        details.setZipCode(zipCode);
-        details.setPhoneNumber(phoneNumber);
-        contact_Details.add(details);
+
+        if (contact_Details.isEmpty()) {
+            Contacts details = new Contacts();
+            details.setFirstName(firstName);
+            details.setLastName(lastName);
+            details.setAddress(address);
+            details.setCity(city);
+            details.setState(state);
+            details.setEmailId(emailId);
+            details.setZipCode(zipCode);
+            details.setPhoneNumber(phoneNumber);
+            contact_Details.add(details);
+        }
+        else {
+            for (Contacts contact : contact_Details) {
+                if (firstName.equalsIgnoreCase(contact.getFirstName())) {
+                    System.out.println("duplicate entry");
+                    break;
+                }
+                else  if (!firstName.equalsIgnoreCase(contact.getFirstName()))  {
+                    Contacts details = new Contacts();
+                    details.setFirstName(firstName);
+                    details.setLastName(lastName);
+                    details.setAddress(address);
+                    details.setCity(city);
+                    details.setState(state);
+                    details.setEmailId(emailId);
+                    details.setZipCode(zipCode);
+                    details.setPhoneNumber(phoneNumber);
+                    contact_Details.add(details);
+                    break;
+                }
+            }
+        }
         return contact_Details;
     }
 
@@ -77,6 +103,7 @@ public class AddressBook {
      * @param searchName is used to edit contacts
      */
     public ArrayList<Contacts> editContacts(String searchName, String firstName, String lastName, String address, String city, String state, String emailId, int zipcode, long phoneNumber) {
+
         for (Contacts contact : contact_Details) {
             if (searchName.equalsIgnoreCase(contact.getFirstName())) {
                 System.out.println("Entered Name found in the contacts");
@@ -92,7 +119,6 @@ public class AddressBook {
         }
         return contact_Details;
     }
-
 
 
     /**

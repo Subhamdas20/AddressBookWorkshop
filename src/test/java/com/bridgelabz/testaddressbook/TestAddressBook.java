@@ -15,7 +15,7 @@ public class TestAddressBook {
         AddressBook book = new AddressBook();
         ArrayList<Contacts> contact = book.addContacts("Subham", "das", "sukantapally", "durgapur", "bengal", "subham@gmail", 713207, 70033213);
         ArrayList<Contacts> contacts = book.addContacts("Subham", "das", "sukantapally", "durgapur", "bengal", "subham@gmail", 713207, 70033213);
-        Assert.assertEquals(2,contacts.size());
+        Assert.assertEquals(1,contacts.size());
     }
 
     @Test
@@ -40,6 +40,14 @@ public class TestAddressBook {
         AddressBook book = new AddressBook();
         ArrayList<Contacts> contact = book.addContacts("Subham", "das", "sukantapally", "durgapur", "bengal", "subham@gmail", 713207, 70033213);
         ArrayList<Contacts> contacts = book.addContacts("Avishek", "paul", "sukantanagar", "kolkata", "bengal", "avishek_paul@gmail", 719867, 6438452);        Assert.assertEquals(2,contacts.size());
+        Assert.assertEquals(2,contacts.size());
+    }
+    @Test
+    public void givenAddMethodWhenDuplicateContactsAddedShouldReturnTheListWithNoDuplicateEntry() {
+        AddressBook book = new AddressBook();
+        ArrayList<Contacts> contact = book.addContacts("Subham", "das", "sukantapally", "durgapur", "bengal", "subham@gmail", 713207, 70033213);
+        ArrayList<Contacts> contacts = book.addContacts("Subham", "das", "sukantapally", "durgapur", "bengal", "subham@gmail", 713207, 70033213);
+        ArrayList<Contacts> contact2 = book.addContacts("Avishek", "paul", "sukantanagar", "kolkata", "bengal", "avishek_paul@gmail", 719867, 6438452);
         Assert.assertEquals(2,contacts.size());
     }
 
