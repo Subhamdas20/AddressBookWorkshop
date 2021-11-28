@@ -51,5 +51,4 @@ public class TestAddressBook {
         Assert.assertEquals(2,contacts.size());
     }
 
-
 }
